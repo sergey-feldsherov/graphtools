@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 	default:
 		printf("convert: invalid option\n");
 		printUsage();
-		printf("\nTry `convert -h' for more options.\n");
+		printf("\nTry 'convert -h' for more options.\n");
 
 		return -1;
 	} ARGEND
@@ -53,14 +53,16 @@ int main(int argc, char *argv[]) {
 	}
 
 	if(debug) {
-		printf("Reading input file: `%s'\n", inputFileName);
+		printf("Reading input file: '%s'\n", inputFileName);
 	}
+
+	
 
 	if(debug) {
 		if(outputFileName == NULL) {
 			printf("Writing output to STDOUT\n");
 		} else {
-			printf("Writing output to `%s'\n", outputFileName);
+			printf("Writing output to '%s'\n", outputFileName);
 		}
 	}
 
@@ -80,7 +82,7 @@ void printHelp(void) {
 
 	printf("\t-d\trun in debug mode\n");
 	printf("\t-h\tprint this message\n");
-	printf("\t-s\tenable strict checking mode\n");
+	printf("\t-s\tenable strict checking mode (currently no effect)\n");
 
 	return;
 }
