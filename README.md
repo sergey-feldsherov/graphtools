@@ -8,6 +8,7 @@
 * backnumerate
 	* add to project
 * edgelist2mtx
+	* add detection of undirected edgelist graphs
 	* add a toggle to check for indices being 1-based or 0-based
 	* add a toggle to write IDs "as-is" (if range is valid) or
 	to choose to renumerate (push out 0-degree vertices)
