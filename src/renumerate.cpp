@@ -94,22 +94,22 @@ main(int argc, char *argv[])
 		return 1;
 	}
 
-	char *infilename = new char[strlen(argv[0])];
+	char *infilename = new char[strlen(argv[0]) + 1];
 	strcpy(infilename, argv[0]);
 
 	int argv1len = strlen(argv[1]);
 	char outgraphfilesuff[] = ".renumerated";
-	char *outgraphfilename = new char[argv1len + strlen(outgraphfilesuff)];
+	char *outgraphfilename = new char[argv1len + strlen(outgraphfilesuff) + 1];
 	strcpy(outgraphfilename, argv[1]);
 	strcpy(outgraphfilename + argv1len, outgraphfilesuff);
 
 	char new2oldfilesuff[] = ".new2old";
-	char *new2oldfilename = new char[argv1len + strlen(new2oldfilesuff)];
+	char *new2oldfilename = new char[argv1len + strlen(new2oldfilesuff) + 1];
 	strcpy(new2oldfilename, argv[1]);
 	strcpy(new2oldfilename + argv1len, new2oldfilesuff);
 
 	char old2newfilesuff[] = ".old2new";
-	char *old2newfilename = new char[argv1len + strlen(old2newfilesuff)];
+	char *old2newfilename = new char[argv1len + strlen(old2newfilesuff) + 1];
 	strcpy(old2newfilename, argv[1]);
 	strcpy(old2newfilename + argv1len, old2newfilesuff);
 
