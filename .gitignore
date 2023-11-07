@@ -2,4 +2,8 @@ renumerate
 edgelist2mtx
 convert
 graphstat
+input/*
+!input/test.txt
+output/*
+!output/test.*.valid
 

@@ -35,7 +35,7 @@ CC := gcc $(CFLAGS)
 CPP := g++ $(BXXFLAGS)
 
 
-all: renumerate edgelist2mtx convert graphstat
+all: renumerate edgelist2mtx convert graphstat test
 
 
 renumerate: src/renumerate.cpp
@@ -51,7 +51,13 @@ convert: src/convert.c
 graphstat: src/graphstat.cpp
 	$(CPP) -O3 -o graphstat src/graphstat.cpp
 
+test: renumerate input/test.txt output/test.renumerated.valid output/test.new2old.valid output/test.old2new.valid
+	./renumerate input/test.txt output/test
+	diff output/test.new2old output/test.new2old.valid
+	diff output/test.old2new output/test.old2new.valid
+	diff output/test.renumerated output/test.renumerated.valid
+
 clean:
-	rm -f renumerate edgelist2mtx convert graphstat
+	rm -f renumerate edgelist2mtx convert graphstat output/test.renumerated output/test.new2old output/test.old2new
 	find * -name \*~ -delete
 
